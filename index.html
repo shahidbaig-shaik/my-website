@@ -5,39 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qubit Quest</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Prism for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <h1>Qubit Quest</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#get-started">Get Started</a></li>
+                <li><a href="#home" class="tab-link active" data-tab="home">Home</a></li>
+                <li><a href="#superposition" class="tab-link" data-tab="superposition">Superposition</a></li>
+                <li><a href="#entanglement" class="tab-link" data-tab="entanglement">Entanglement</a></li>
+                <li><a href="#phase" class="tab-link" data-tab="phase">Phase Estimation</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="about">
-            <h2>About</h2>
-            <p>Qubit Quest is a place for you to explore quantum computing puzzles and learn about qubits.</p>
+        <section id="home" class="tab-content active">
+            <h2>Welcome to Qubit Quest</h2>
+            <p>Explore quantum computing topics with interactive examples.</p>
         </section>
-        <section id="features">
-            <h2>Features</h2>
-            <ul>
-                <li>Interactive tutorials</li>
-                <li>Puzzles and challenges</li>
-                <li>Community leaderboards</li>
-            </ul>
+        <section id="superposition" class="tab-content">
+            <h2>Superposition</h2>
+            <p>In quantum mechanics, a qubit can be in a combination of states:</p>
+            <p>$$|\psi\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}}$$</p>
+            <pre><code class="language-python">from qiskit import QuantumCircuit
+qc = QuantumCircuit(1)
+qc.h(0)
+qc.measure_all()</code></pre>
         </section>
-        <section id="get-started">
-            <h2>Get Started</h2>
-            <p>Begin your quest by signing up or exploring the tutorials.</p>
-            <a class="btn" href="#">Join Qubit Quest</a>
+        <section id="entanglement" class="tab-content">
+            <h2>Entanglement</h2>
+            <p>Entangled qubits share a state no matter the distance.</p>
+            <p>$$|\Phi^+\rangle = \frac{|00\rangle + |11\rangle}{\sqrt{2}}$$</p>
+        </section>
+        <section id="phase" class="tab-content">
+            <h2>Phase Estimation</h2>
+            <p>Phase estimation allows you to find eigenvalues of unitary operators.</p>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Qubit Quest</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
